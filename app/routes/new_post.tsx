@@ -47,8 +47,8 @@ export function loader() {
     { hello: "world" },
     {
       headers: {
-        "Access-Control-Allow-Headers": "Content-Type",
-        "Access-Control-Allow-Origin": "app://obsidian.md",
+        "Access-Control-Allow-Headers": "*",
+        "Access-Control-Allow-Origin": "*",
       },
     }
   );
