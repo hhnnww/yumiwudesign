@@ -61,5 +61,10 @@ export async function loader() {
     },
   });
 
-  return json(post_list, { headers: { "Access-Control-Allow-Origin": "*" } });
+  return json(post_list, {
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Headers": "Content-Type",
+    },
+  });
 }

@@ -48,11 +48,8 @@ export function loader() {
     {
       headers: {
         "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "Content-Type",
       },
     }
   );
 }
-
-// export default function Component() {
-//   return <>ffff</>;
-// }
