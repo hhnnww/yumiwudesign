@@ -26,10 +26,20 @@ export default function Component() {
             img: {
               maxWidth: "100%",
             },
+            h1: {
+              fontSize: "1.3rem",
+              borderBottom: `1px solid ${theme.vars.palette.divider}`,
+              paddingBottom: theme.spacing(1),
+              paddingTop: theme.spacing(6),
+            },
+            p: {
+              marginBottom: theme.spacing(4),
+            },
             h2: {
               borderBottom: `1px solid ${theme.vars.palette.divider}`,
-              paddingBottom: theme.spacing(2),
+              paddingBottom: theme.spacing(1),
               paddingTop: theme.spacing(6),
+              fontSize: "1.2rem",
             },
             "h3,h4,h5,h6,h7": {
               fontSize: "1rem",
@@ -42,7 +52,7 @@ export default function Component() {
           },
         }}
       />
-      <Container>
+      <Container maxWidth="lg">
         <Box bgcolor={"#FFFFFF"} px={[2, 4, 6, 8]}>
           <Grid container>
             <Grid xs={12} py={[4, 6, 12]}>
