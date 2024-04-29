@@ -42,7 +42,7 @@ export default function Component() {
                   lineHeight: "2",
                 }}
               >
-                {item.content?.substring(0, 350).replaceAll(" ", "")}
+                {item.content?.substring(0, 350)}
                 ...
               </Typography>
             </Stack>
