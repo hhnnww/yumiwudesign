@@ -62,7 +62,9 @@ export async function loader() {
   });
 
   return json(post_list, {
+    status: 200,
     headers: {
+      "Access-Control-Allow-Credentials": "true",
       "Access-Control-Allow-Headers": "*",
       "Access-Control-Allow-Origin": "*",
     },
