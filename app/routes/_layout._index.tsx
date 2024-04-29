@@ -1,5 +1,5 @@
 import { Stack, Typography } from "@mui/material";
-import { useLoaderData } from "@remix-run/react";
+import { json, useLoaderData } from "@remix-run/react";
 import moment from "moment";
 import { prisma } from "prisma/prisma.server";
 import { MLink } from "~/component/link";
@@ -61,5 +61,5 @@ export async function loader() {
     },
   });
 
-  return post_list;
+  return json(post_list, { headers: { "Access-Control-Allow-Origin": "*" } });
 }
