@@ -31,6 +31,9 @@ export default function Component() {
               paddingBottom: theme.spacing(2),
               paddingTop: theme.spacing(6),
             },
+            "h3,h4,h5,h6,h7": {
+              fontSize: "1rem",
+            },
             a: {
               ":hover": {
                 textDecoration: "none",
