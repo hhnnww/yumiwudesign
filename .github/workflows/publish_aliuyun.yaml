@@ -22,5 +22,6 @@ jobs:
           SCRIPT_AFTER: |
             cd /myProject/yumiwudesign
             pnpm install
+            npx prisma generate
             pnpm run build
             pm2 restart pm2.json
