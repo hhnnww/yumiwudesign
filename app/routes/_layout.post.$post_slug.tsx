@@ -21,7 +21,7 @@ export default function Component() {
         {loader_data?.title as string}
       </Typography>
 
-      <Typography variant="body1">
+      <Typography variant="body1" sx={{ textTransform: "uppercase" }}>
         {moment(loader_data?.created_date).fromNow()}
       </Typography>
       <Box mt={[2, 4, 6, 8]} className="prose">

@@ -97,6 +97,21 @@ export const components: CssVarsThemeOptions["components"] = {
       root: {
         fontFamily: ["Montserrat", "sans-serif"].join(","),
       },
+      h1: {
+        fontFamily: ["Montserrat", "sans-serif"].join(","),
+      },
+      h2: {
+        fontFamily: ["Montserrat", "sans-serif"].join(","),
+      },
+      h3: {
+        fontFamily: ["Montserrat", "sans-serif"].join(","),
+      },
+      h4: {
+        fontFamily: ["Montserrat", "sans-serif"].join(","),
+      },
+      h5: {
+        fontFamily: ["Montserrat", "sans-serif"].join(","),
+      },
     },
   },
 };

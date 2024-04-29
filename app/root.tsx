@@ -15,8 +15,10 @@ import "@fontsource/montserrat/300.css";
 import "@fontsource/montserrat/500.css";
 import "@fontsource/montserrat/600.css";
 
+import { CssBaseline, Experimental_CssVarsProvider } from "@mui/material";
 import ClientStyleContext from "~/styles/client.context";
 import ServerStyleContext from "~/styles/server.context";
+import { theme } from "./theme/theme";
 
 const Container = styled("div")`
   background-color: #ff0000;
@@ -78,7 +80,10 @@ const Document = withEmotionCache(
           ))}
         </head>
         <body>
-          {children}
+          <Experimental_CssVarsProvider theme={theme}>
+            <CssBaseline />
+            {children}
+          </Experimental_CssVarsProvider>
           <ScrollRestoration />
           <Scripts />
           <LiveReload />
