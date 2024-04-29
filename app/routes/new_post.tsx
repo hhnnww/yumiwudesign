@@ -46,6 +46,7 @@ export function loader() {
   return json(
     { hello: "world" },
     {
+      status: 200,
       headers: {
         "Access-Control-Allow-Credentials": "true",
         "Access-Control-Allow-Headers": "*",
