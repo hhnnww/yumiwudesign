@@ -5,6 +5,10 @@ import Markdown from "marked-react";
 import { prisma } from "prisma/prisma.server";
 import { PostItem } from "~/component/post-item";
 
+export function meta({ data }: { data: { title: string } }) {
+  return [{ title: (data.title + " - yumiwudesign") as string }];
+}
+
 export default function Component() {
   const loader_data = useLoaderData<typeof loader>();
   return (

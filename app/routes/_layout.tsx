@@ -20,22 +20,11 @@ export default function Component() {
             },
             pre: {
               border: `1px solid ${theme.vars.palette.divider}`,
-              padding: theme.spacing(3.5),
-              borderRadius: theme.spacing(1),
+              padding: theme.spacing(3),
+              borderRadius: theme.spacing(0.5),
             },
             img: {
               maxWidth: "100%",
-            },
-            h1: {
-              fontSize: "1.3rem",
-              paddingTop: theme.spacing(2),
-            },
-            p: {
-              marginBottom: theme.spacing(2),
-            },
-            h2: {
-              paddingTop: theme.spacing(2),
-              fontSize: "1.2rem",
             },
             "h3,h4,h5,h6,h7": {
               fontSize: "1rem",
