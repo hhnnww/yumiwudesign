@@ -61,8 +61,8 @@ export default function Component() {
             </MLink>
           </Grid>
 
-          <Grid xs={12} sx={{ pb: [4, 6, 8] }} bgcolor={"#fff"}>
-            <Box px={[4, 8]} pt={6}>
+          <Grid xs={12} bgcolor={"#fff"}>
+            <Box px={[4, 8]} py={8}>
               <Outlet />
             </Box>
           </Grid>

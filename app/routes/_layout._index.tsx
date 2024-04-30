@@ -9,7 +9,7 @@ export function meta() {
 export default function Component() {
   const loader_data = useLoaderData<typeof loader>();
   return (
-    <Stack spacing={[4, 6]} divider={<Divider />}>
+    <Stack spacing={[4, 6, 8]} divider={<Divider />}>
       {loader_data.map((item) => (
         <PostItem
           title={item.title as string}

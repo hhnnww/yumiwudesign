@@ -1,13 +1,11 @@
 import { CacheProvider } from "@emotion/react";
 import createEmotionServer from "@emotion/server/create-instance";
-import { CssBaseline, Experimental_CssVarsProvider } from "@mui/material";
 import type { EntryContext } from "@remix-run/node";
 import { RemixServer } from "@remix-run/react";
 import { renderToString } from "react-dom/server";
 
 import createEmotionCache from "~/styles/createEmotionCache";
 import ServerStyleContext from "~/styles/server.context";
-import { theme } from "./theme/theme";
 
 export default function handleRequest(
   request: Request,
@@ -21,10 +19,7 @@ export default function handleRequest(
   const html = renderToString(
     <ServerStyleContext.Provider value={null}>
       <CacheProvider value={cache}>
-        <Experimental_CssVarsProvider theme={theme}>
-          <CssBaseline />
-          <RemixServer context={remixContext} url={request.url} />
-        </Experimental_CssVarsProvider>
+        <RemixServer context={remixContext} url={request.url} />
       </CacheProvider>
     </ServerStyleContext.Provider>
   );
@@ -34,10 +29,7 @@ export default function handleRequest(
   const markup = renderToString(
     <ServerStyleContext.Provider value={chunks.styles}>
       <CacheProvider value={cache}>
-        <Experimental_CssVarsProvider theme={theme}>
-          <CssBaseline />
-          <RemixServer context={remixContext} url={request.url} />
-        </Experimental_CssVarsProvider>
+        <RemixServer context={remixContext} url={request.url} />
       </CacheProvider>
     </ServerStyleContext.Provider>
   );
