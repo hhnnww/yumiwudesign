@@ -1,5 +1,6 @@
 import { Button, Divider, Stack } from "@mui/material";
-import { Link, json, useLoaderData, useParams } from "@remix-run/react";
+import { LoaderFunctionArgs } from "@remix-run/node";
+import { json, Link, useLoaderData, useParams } from "@remix-run/react";
 import { prisma } from "prisma/prisma.server";
 import { PostItem } from "~/component/post-item";
 
@@ -8,10 +9,8 @@ export function meta() {
 }
 export default function Component() {
   const loader_data = useLoaderData<typeof loader>();
-  let params = useParams();
-  if (!params.page_num) {
-    params = { page_num: "1" };
-  }
+  const params = useParams();
+
   return (
     <>
       <Stack spacing={[4, 6, 8]} divider={<Divider />}>
@@ -62,10 +61,11 @@ export default function Component() {
   );
 }
 
-export async function loader() {
+export async function loader({ params }: LoaderFunctionArgs) {
+  const page_num = parseInt(params?.page_num as string) - 1;
   const post_list = await prisma.post.findMany({
     take: 10,
-
+    skip: page_num * 10,
     orderBy: {
       slug: "desc",
     },
