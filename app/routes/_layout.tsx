@@ -22,6 +22,7 @@ export default function Component() {
               border: `1px solid ${theme.vars.palette.divider}`,
               padding: theme.spacing(3),
               borderRadius: theme.spacing(0.5),
+              whiteSpace: "pre-wrap",
             },
             img: {
               maxWidth: "100%",
@@ -61,7 +62,7 @@ export default function Component() {
           </Grid>
 
           <Grid xs={12} sx={{ pb: [4, 6, 8] }} bgcolor={"#fff"}>
-            <Box px={[6, 8]} pt={6}>
+            <Box px={[4, 8]} pt={6}>
               <Outlet />
             </Box>
           </Grid>

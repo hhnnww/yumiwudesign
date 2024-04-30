@@ -60,7 +60,7 @@ const Document = withEmotionCache(
     }, [clientStyleData, emotionCache.sheet]);
 
     return (
-      <html lang="zh-cmn-hans">
+      <html lang="zh-hans">
         <head>
           <meta charSet="utf-8" />
           <meta

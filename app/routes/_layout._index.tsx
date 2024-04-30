@@ -16,11 +16,10 @@ export default function Component() {
           content={
             <Stack
               sx={{
-                lineClamp: 2,
-                webkitBoxOrient: "vertical",
+                display: "-webkit-box",
+                WebkitLineClamp: 3,
+                WebkitBoxOrient: "vertical",
                 overflow: "hidden",
-                textOverflow: "ellipsis",
-                display: " -webkit-box",
               }}
             >
               {(item.content?.substring(0, 200) + "...") as string}
