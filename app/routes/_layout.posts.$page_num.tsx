@@ -1,7 +1,8 @@
-import { Button, Divider, Stack } from "@mui/material";
+import { Divider, Stack } from "@mui/material";
 import { LoaderFunctionArgs } from "@remix-run/node";
-import { json, Link, useLoaderData, useParams } from "@remix-run/react";
+import { json, useLoaderData, useParams } from "@remix-run/react";
 import { prisma } from "prisma/prisma.server";
+import { PageNavi } from "~/component/page-navi";
 import { PostItem } from "~/component/post-item";
 
 export function meta() {
@@ -36,27 +37,9 @@ export default function Component() {
         ))}
       </Stack>
 
-      <Stack mt={6} direction={"row"} alignItems={"start"}>
-        {parseInt(params.page_num as string) > 1 && (
-          <Button
-            component={Link}
-            to={
-              "/posts/" + (parseInt(params.page_num as string) - 1).toString()
-            }
-          >
-            上一页
-          </Button>
-        )}
-        <Button disabled sx={{ color: "inherit" }}>
-          {params.page_num}
-        </Button>
-        <Button
-          component={Link}
-          to={"/posts/" + (parseInt(params.page_num as string) + 1).toString()}
-        >
-          下一页
-        </Button>
-      </Stack>
+      {loader_data.length > 9 && (
+        <PageNavi page_num={parseInt(params.page_num as string)} />
+      )}
     </>
   );
 }

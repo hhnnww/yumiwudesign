@@ -17,7 +17,7 @@ export function PostItem({
 }) {
   return (
     <Stack>
-      <Stack mb={2}>
+      <Stack mb={3}>
         <MLink link={`/post/${link}`}>
           <Typography
             variant="h2"
@@ -33,7 +33,6 @@ export function PostItem({
         <Typography
           variant="body2"
           sx={{
-            textTransform: "uppercase",
             color: theme.vars.palette.text.secondary,
             lineHeight: 1,
           }}

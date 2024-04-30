@@ -1,6 +1,9 @@
-import { Button, Divider, Stack } from "@mui/material";
-import { Link, json, useLoaderData, useParams } from "@remix-run/react";
+/* eslint-disable no-misleading-character-class */
+/* eslint-disable no-control-regex */
+import { Divider, Stack } from "@mui/material";
+import { json, useLoaderData, useParams } from "@remix-run/react";
 import { prisma } from "prisma/prisma.server";
+import { PageNavi } from "~/component/page-navi";
 import { PostItem } from "~/component/post-item";
 
 export function meta() {
@@ -12,6 +15,7 @@ export default function Component() {
   if (!params.page_num) {
     params = { page_num: "1" };
   }
+
   return (
     <>
       <Stack spacing={[4, 6, 8]} divider={<Divider />}>
@@ -25,6 +29,7 @@ export default function Component() {
                   WebkitLineClamp: 3,
                   WebkitBoxOrient: "vertical",
                   overflow: "hidden",
+                  wordBreak: "break-all",
                 }}
               >
                 {(item.content?.substring(0, 200) + "...") as string}
@@ -37,27 +42,9 @@ export default function Component() {
         ))}
       </Stack>
 
-      <Stack mt={6} direction={"row"} alignItems={"start"}>
-        {parseInt(params.page_num as string) > 1 && (
-          <Button
-            component={Link}
-            to={
-              "/posts/" + (parseInt(params.page_num as string) - 1).toString()
-            }
-          >
-            上一页
-          </Button>
-        )}
-        <Button disabled sx={{ color: "inherit" }}>
-          {params.page_num}
-        </Button>
-        <Button
-          component={Link}
-          to={"/posts/" + (parseInt(params.page_num as string) + 1).toString()}
-        >
-          下一页
-        </Button>
-      </Stack>
+      {loader_data.length > 9 && (
+        <PageNavi page_num={parseInt(params.page_num as string)} />
+      )}
     </>
   );
 }
