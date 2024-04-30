@@ -23,8 +23,6 @@ export function PostItem({
             variant="h2"
             sx={{
               fontSize: ["1.8rem", "2.2rem"],
-              textTransform: "uppercase",
-              fontWeight: 300,
               mb: 2,
             }}
           >

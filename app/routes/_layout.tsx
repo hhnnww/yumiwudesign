@@ -27,6 +27,10 @@ export default function Component() {
             img: {
               maxWidth: "100%",
             },
+            h1: {
+              fontSize: "1.2rem",
+            },
+            h2: { fontSize: "1.1rem" },
             "h3,h4,h5,h6,h7": {
               fontSize: "1rem",
             },

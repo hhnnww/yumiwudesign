@@ -80,8 +80,12 @@ const Document = withEmotionCache(
           ))}
         </head>
         <body>
-          <Experimental_CssVarsProvider theme={theme}>
-            <CssBaseline />
+          <Experimental_CssVarsProvider
+            theme={theme}
+            defaultColorScheme={"light"}
+            defaultMode="light"
+          >
+            <CssBaseline enableColorScheme />
             {children}
           </Experimental_CssVarsProvider>
           <ScrollRestoration />
