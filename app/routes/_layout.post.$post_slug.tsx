@@ -1,32 +1,23 @@
-import { Box, Typography } from "@mui/material";
+import { Stack } from "@mui/material";
 import { json, LoaderFunctionArgs } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import Markdown from "marked-react";
-import moment from "moment";
 import { prisma } from "prisma/prisma.server";
+import { PostItem } from "~/component/post-item";
 
 export default function Component() {
   const loader_data = useLoaderData<typeof loader>();
   return (
     <>
-      <Typography
-        variant="h2"
-        sx={{
-          fontSize: "2rem",
-          fontWeight: 600,
-          textTransform: "uppercase",
-          pb: 2,
-        }}
-      >
-        {loader_data?.title as string}
-      </Typography>
-
-      <Typography variant="body1" sx={{ textTransform: "uppercase" }}>
-        {moment(loader_data?.created_date).fromNow()}
-      </Typography>
-      <Box mt={[2, 4, 6, 8]} className="prose">
-        <Markdown>{loader_data?.content as string}</Markdown>
-      </Box>
+      <Stack mt={[2, 4, 6, 8]}>
+        <PostItem
+          title={loader_data?.title as string}
+          content={<Markdown>{loader_data?.content as string}</Markdown>}
+          datetime={loader_data?.created_date as string}
+          link={loader_data?.slug as string}
+          key={loader_data?.id as string}
+        />
+      </Stack>
     </>
   );
 }
