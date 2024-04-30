@@ -34,32 +34,14 @@ export async function action({ request }: ActionFunctionArgs) {
         slug: json_data?.slug,
       },
     });
-    return json(
-      {
-        id: post_obj.id,
-        slug: json_data.slug,
-        tags: json_data.tags,
-      },
-      {
-        headers: {
-          "Access-Control-Allow-Credentials": "true",
-          "Access-Control-Allow-Headers": "*",
-          "Access-Control-Allow-Origin": "*",
-        },
-      }
-    );
+    return json({
+      id: post_obj.id,
+      slug: json_data.slug,
+      tags: json_data.tags,
+    });
   }
 }
 
 export function loader() {
-  return json(
-    { hello: "world" },
-    {
-      headers: {
-        "Access-Control-Allow-Credentials": "true",
-        "Access-Control-Allow-Headers": "*",
-        "Access-Control-Allow-Origin": "*",
-      },
-    }
-  );
+  return json({ hello: "world" });
 }
