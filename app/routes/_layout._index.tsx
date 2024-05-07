@@ -9,6 +9,7 @@ import { PostItem } from "~/component/post-item";
 export function meta() {
   return [{ title: "yumiwudesign" }];
 }
+
 export default function Component() {
   const loader_data = useLoaderData<typeof loader>();
   let params = useParams();

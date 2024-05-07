@@ -15,6 +15,9 @@ export default function Component() {
       <GlobalStyles
         styles={{
           ".prose": {
+            lineHeight: "24px",
+            fontSize: "16px",
+            color: "rgba(34,34,34,100)",
             "pre,code": {
               fontFamily: "Consolas, serif",
             },
