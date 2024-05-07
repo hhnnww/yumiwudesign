@@ -3,7 +3,6 @@ import { type CssVarsThemeOptions } from "@mui/material";
 export const typography: CssVarsThemeOptions["typography"] = {
   fontFamily: ["Montserrat", "sans-serif"].join(","),
   fontWeightRegular: 500,
-  fontSize: 13,
 
   h1: {
     fontSize: "1rem",

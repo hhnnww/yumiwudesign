@@ -49,9 +49,20 @@ export function PostItem({
       <Typography
         variant="body1"
         sx={{
-          lineHeight: "2",
+          img: {
+            maxWidth: "100%",
+          },
+          "pre,code": {
+            fontFamily: "consolas",
+            whiteSpace: "normal",
+          },
+          code: {
+            backgroundColor: theme.vars.palette.background.paper,
+          },
+          color: "rgba(34,34,34,1)",
+          fontSize: "16px",
+          lineHeight: "24px",
         }}
-        className="prose"
       >
         {content}
       </Typography>
