@@ -12,7 +12,7 @@ import {
 import { useContext, useEffect, useRef } from "react";
 
 import "@fontsource/montserrat/300.css";
-import "@fontsource/montserrat/500.css";
+import "@fontsource/montserrat/400.css";
 import "@fontsource/montserrat/600.css";
 
 import { CssBaseline, Experimental_CssVarsProvider } from "@mui/material";
@@ -82,8 +82,8 @@ const Document = withEmotionCache(
         <body>
           <Experimental_CssVarsProvider
             theme={theme}
-            defaultColorScheme={"light"}
-            defaultMode="light"
+            defaultColorScheme={"dark"}
+            defaultMode="dark"
           >
             <CssBaseline enableColorScheme />
             {children}
