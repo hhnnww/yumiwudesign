@@ -13,13 +13,17 @@ import { LinkItem } from "~/component/link-item";
 export default function Component() {
   return (
     <>
-      <Container maxWidth="lg">
-        <Grid container columnSpacing={8}>
-          <Grid xs={12} py={8}>
+      <Container maxWidth="lg" sx={{ py: [6, 8] }}>
+        <Grid container spacing={[6, 8]}>
+          <Grid xs={12}>
             <MLink link="/">
               <Typography
                 variant="h1"
-                sx={{ fontWeight: "bold", textTransform: "uppercase" }}
+                sx={{
+                  fontWeight: "bold",
+                  textTransform: "uppercase",
+                  fontSize: "1rem",
+                }}
               >
                 yumiwudesign
               </Typography>
@@ -33,11 +37,18 @@ export default function Component() {
           </Grid>
 
           <Grid xs={12} lg={4}>
-            <Stack>
+            <Stack spacing={1}>
               <Link to="/requesttodict">
                 <LinkItem>
                   <DataObjectOutlinedIcon />
                   <Box>浏览器请求头转换成字典</Box>
+                </LinkItem>
+              </Link>
+
+              <Link to="/getmaterialid">
+                <LinkItem>
+                  <DataObjectOutlinedIcon />
+                  <Box>获取页面的商家编码</Box>
                 </LinkItem>
               </Link>
             </Stack>

@@ -16,9 +16,9 @@ export function PostItem({
 }) {
   return (
     <Stack>
-      <Stack mb={4}>
+      <Stack mb={2}>
         <MLink link={`/post/${link}`}>
-          <Typography variant="h2" sx={{ fontSize: "1.8rem" }} mb={2}>
+          <Typography variant="h2" mb={1}>
             {title}
           </Typography>
         </MLink>
