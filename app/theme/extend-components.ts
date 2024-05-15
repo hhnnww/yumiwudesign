@@ -34,6 +34,9 @@ export const components: CssVarsThemeOptions["components"] = {
   },
 
   MuiInputBase: {
+    defaultProps: {
+      fullWidth: true,
+    },
     styleOverrides: {
       root: () => ({
         input: {
@@ -89,6 +92,7 @@ export const components: CssVarsThemeOptions["components"] = {
   MuiTextField: {
     defaultProps: {
       variant: "filled",
+      fullWidth: true,
     },
   },
 

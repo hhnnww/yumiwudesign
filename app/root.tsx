@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { withEmotionCache } from "@emotion/react";
-import styled from "@emotion/styled";
 import {
   Links,
   LiveReload,
@@ -19,11 +18,6 @@ import { CssBaseline, Experimental_CssVarsProvider } from "@mui/material";
 import ClientStyleContext from "~/styles/client.context";
 import ServerStyleContext from "~/styles/server.context";
 import { theme } from "./theme/theme";
-
-const Container = styled("div")`
-  background-color: #ff0000;
-  padding: 1em;
-`;
 
 interface DocumentProps {
   children: React.ReactNode;
@@ -108,9 +102,7 @@ export default function App() {
 export function ErrorBoundary({ error }: { error: Error }) {
   return (
     <Document title="Error!">
-      <Container>
-        <p>[ErrorBoundary]: There was an error: {error.message}</p>
-      </Container>
+      <p>[ErrorBoundary]: There was an error: {error.message}</p>
     </Document>
   );
 }
